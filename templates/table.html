@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Roster</title>
+       <style>
+           table {
+               border-collapse: collapse;
+               width: 100%;
+           }
+           th, td {
+               padding: 8px;
+               text-align: left;
+               border-bottom: 1px solid #ddd;
+           }
+           th {
+               background-color: #f2f2f2;
+           }
+           body {background: linear-gradient(to right, #ff69b4, #8a2be2);}
+       </style>
+   </head>
+   <body>
+       <h1 style="color: antiquewhite;">Roster</h1>
+      
+      
+           <table>
+           <thead>
+               <tr>
+                   <th>Employee ID</th>
+                   <th>Employee Name</th>
+                   <th>Team Name</th>
+                   <th>Comments</th>
+                   <th>From Date</th>
+                   <th>To Date</th>
+               </tr>
+           </thead>
+           {% for row in results %}
+           <tbody><tr>
+                   <td>{{ row.empid }}</td>
+                   <td>{{ row.emp_name }}</td>
+                   <td>{{ row.team_name }}</td>
+                   <td>{{ row.comments }}</td>
+                   <td>{{ row.from_date }}</td>
+                   <td>{{ row.to_date }}</td>
+               </tr></tbody>
+            {% endfor %}
+       </table>
+  
+  
+   </body>
+</html>

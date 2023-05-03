@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>On-Call Roster</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+           background: linear-gradient(to right, #4B86B4, #a020f0);
+       }
+
+       h1 {
+           text-align: center;
+           margin-top: 50px;
+       }
+
+       .displayclass {
+           margin: 50px auto;
+           max-width: 500px;
+           padding: 20px;
+           background-color: #f2f2f2;
+           border-radius: 5px;
+           box-shadow: 0 0 5px #ccc;
+       }
+
+       label {
+           display: block;
+           margin-bottom: 10px;
+       }
+
+       input[type="date"] {
+           display: block;
+           width: 100%;
+           padding: 10px;
+           margin-bottom: 20px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           font-size: 16px;
+           box-sizing: border-box;
+       }
+
+       .displaybutton[type="submit"] {
+           background-color: #4CAF50;
+           color: white;
+           padding: 10px 20px;
+           border: none;
+           border-radius: 5px;
+           font-size: 16px;
+           cursor: pointer;
+           align-items: center;
+       }
+
+       .disbutton[type="submit"]:hover {
+           background-color: #3e8e41;
+       }
+
+       .insertbutton[type='submit']{
+           background-color: #9c4dce;
+           color: white;
+           padding: 10px 20px;
+           border: none;
+           border-radius: 5px;
+           font-size: 16px;
+           cursor: pointer;
+           align-items: center;
+       }
+
+       .insbutton[type="submit"]:hover {
+           background-color: #5b3188;
+       }
+
+
+   </style>
+</head>
+<body>
+   <h1 style="color: antiquewhite;">On-Call Roster</h1>
+   <form class='displayclass' action="/schedule" method="POST">
+       <label for="from">From:</label>
+       <input type="date" id="from" name="from">
+
+       <label for="to">To:</label>
+       <input type="date" id="to" name="to">
+
+       <button class="displaybutton disbutton" type="submit">Display</button>
+   </form >
+   <form action="/insert" method="POST">
+       <button style="position: absolute; top:50%; left:50%;" class="insertbutton insbutton displayclass" type="submit">
+           Insert
+       </button>
+   </form>
+   <form action="/update" method = "POST">
+       <button style="position: relative; top:50%; left:50%;" class="insertbutton insbutton displayclass" type="submit">
+           Update
+       </button>
+   </form>
+  
+</body>
+</html>
